@@ -30,33 +30,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // index.ts
 var InvidJS_exports = {};
 __export(InvidJS_exports, {
-  AudioQuality: () => AudioQuality,
-  ChannelPlaylistsSorting: () => ChannelPlaylistsSorting,
-  ChannelVideosSorting: () => ChannelVideosSorting,
-  CommentSorting: () => CommentSorting,
-  ContentTypes: () => ContentTypes,
-  DateValues: () => DateValues,
-  Duration: () => Duration,
-  ErrorCodes: () => ErrorCodes,
-  FetchTypes: () => FetchTypes,
-  ImageQuality: () => ImageQuality,
-  InstanceSorting: () => InstanceSorting,
-  InstanceTypes: () => InstanceTypes,
-  TrendingTypes: () => TrendingTypes,
-  VideoSorting: () => VideoSorting,
-  fetchChannel: () => fetchChannel,
-  fetchComments: () => fetchComments,
-  fetchHashtag: () => fetchHashtag,
-  fetchInstances: () => fetchInstances,
-  fetchPlaylist: () => fetchPlaylist,
-  fetchPopular: () => fetchPopular,
-  fetchSearchSuggestions: () => fetchSearchSuggestions,
-  fetchTrending: () => fetchTrending,
-  fetchVideo: () => fetchVideo,
-  getInstance: () => getInstance,
-  saveBlob: () => saveBlob,
-  saveStream: () => saveStream,
-  searchContent: () => searchContent
+  default: () => InvidJS_default
 });
 module.exports = __toCommonJS(InvidJS_exports);
 
@@ -1498,33 +1472,32 @@ var saveStream = async (instance, video, source) => {
     });
   });
 };
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  AudioQuality,
-  ChannelPlaylistsSorting,
-  ChannelVideosSorting,
-  CommentSorting,
-  ContentTypes,
-  DateValues,
-  Duration,
-  ErrorCodes,
-  FetchTypes,
-  ImageQuality,
-  InstanceSorting,
-  InstanceTypes,
-  TrendingTypes,
-  VideoSorting,
-  fetchChannel,
-  fetchComments,
-  fetchHashtag,
+var InvidJS_default = {
   fetchInstances,
-  fetchPlaylist,
-  fetchPopular,
-  fetchSearchSuggestions,
-  fetchTrending,
-  fetchVideo,
   getInstance,
+  fetchVideo,
+  fetchComments,
+  fetchPlaylist,
+  fetchChannel,
+  fetchSearchSuggestions,
+  searchContent,
+  fetchTrending,
+  fetchPopular,
+  fetchHashtag,
   saveBlob,
   saveStream,
-  searchContent
-});
+  ErrorCodes,
+  FetchTypes,
+  InstanceTypes,
+  ContentTypes,
+  TrendingTypes,
+  VideoSorting,
+  CommentSorting,
+  InstanceSorting,
+  Duration,
+  DateValues,
+  ChannelPlaylistsSorting,
+  ChannelVideosSorting,
+  AudioQuality,
+  ImageQuality
+};

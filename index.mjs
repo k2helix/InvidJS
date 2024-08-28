@@ -1436,32 +1436,35 @@ var saveStream = async (instance, video, source) => {
     });
   });
 };
-export {
-  AudioQuality,
-  ChannelPlaylistsSorting,
-  ChannelVideosSorting,
-  CommentSorting,
-  ContentTypes,
-  DateValues,
-  Duration,
-  ErrorCodes,
-  FetchTypes,
-  ImageQuality,
-  InstanceSorting,
-  InstanceTypes,
-  TrendingTypes,
-  VideoSorting,
-  fetchChannel,
-  fetchComments,
-  fetchHashtag,
+var InvidJS_default = {
   fetchInstances,
-  fetchPlaylist,
-  fetchPopular,
-  fetchSearchSuggestions,
-  fetchTrending,
-  fetchVideo,
   getInstance,
+  fetchVideo,
+  fetchComments,
+  fetchPlaylist,
+  fetchChannel,
+  fetchSearchSuggestions,
+  searchContent,
+  fetchTrending,
+  fetchPopular,
+  fetchHashtag,
   saveBlob,
   saveStream,
-  searchContent
+  ErrorCodes,
+  FetchTypes,
+  InstanceTypes,
+  ContentTypes,
+  TrendingTypes,
+  VideoSorting,
+  CommentSorting,
+  InstanceSorting,
+  Duration,
+  DateValues,
+  ChannelPlaylistsSorting,
+  ChannelVideosSorting,
+  AudioQuality,
+  ImageQuality
+};
+export {
+  InvidJS_default as default
 };

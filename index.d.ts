@@ -535,138 +535,34 @@ declare class Comment {
     constructor(author: string, author_id: string, text: string);
 }
 
-/**
- * @name fetchInstances
- * @description Fetches public Invidious instances.
- * @param {InstanceFetchOptions} [opts] - Instance fetch options.
- * @example await InvidJS.fetchInstances();
- * @example await InvidJS.fetchInstances({limit: 10});
- * @returns {Promise<Instance[]>} Array of instance objects.
- */
-declare const fetchInstances: (opts?: InstanceFetchOptions) => Promise<Instance[]>;
-/**
- * @name getInstance
- * @description Generates an Instance object from an Invidious URL.
- * @param {string} url - Instance fetch options.
- * @example await InvidJS.getInstance("https://inv.idio.us");
- * @returns {Promise<Instance>} Instance object.
- */
-declare const getInstance: (url: string) => Promise<Instance>;
-/**
- * @name fetchVideo
- * @description Fetches video data.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {string} id - Video ID.
- * @param {VideoFetchOptions} [opts] - Video fetch options.
- * @example await InvidJS.fetchVideo(instance, "id");
- * @example await InvidJS.fetchVideo(instance, "id", {region: "US"});
- * @returns {Promise<Video>} Video object.
- */
-declare const fetchVideo: (instance: Instance, id: string, opts?: VideoFetchOptions) => Promise<Video>;
-/**
- * @name fetchComments
- * @description Fetches comments of a video.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {Video} video - Video object.
- * @param {CommentFetchOptions} [opts] - Comment fetch options.
- * @example await InvidJS.fetchComments(instance, video);
- * @example await InvidJS.fetchComments(instance, video, {limit: 5});
- * @returns {Promise<Comment[]>} Comments array.
- */
-declare const fetchComments: (instance: Instance, video: Video, opts?: CommentFetchOptions) => Promise<Comment[]>;
-/**
- * @name fetchPlaylist
- * @description Fetches playlist data.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {string} id - Playlist ID.
- * @param {PlaylistFetchOptions} [opts] - Playlist fetch options.
- * @example await InvidJS.fetchPlaylist(instance, "id");
- * @example await InvidJS.fetchPlaylist(instance, "id", {limit: 10});
- * @returns {Promise<Playlist>} Playlist object.
- */
-declare const fetchPlaylist: (instance: Instance, id: string, opts?: PlaylistFetchOptions) => Promise<Playlist>;
-/**
- * @name fetchChannel
- * @description Fetches channel data.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {string} id - Channel ID.
- * @param {ContentOptions} [opts] - Channel fetch options.
- * @example await InvidJS.fetchChannel(instance, "id");
- * @returns {Promise<Channel>} Channel object.
- */
-declare const fetchChannel: (instance: Instance, id: string, opts?: ContentOptions) => Promise<Channel>;
-/**
- * @name fetchSearchSuggestions
- * @description Fetches suggestions for a search query.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {string} query - Search query.
- * @example await InvidJS.fetchSearchSuggestions(instance, "search");
- * @returns {Promise<Array<string>>} Array of search suggestions.
- */
-declare const fetchSearchSuggestions: (instance: Instance, query: string) => Promise<Array<string>>;
-/**
- * @name searchContent
- * @description Searches content based on the query and search options.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {string} query - Search query.
- * @param {SearchOptions} [opts] - Search options.
- * @example await InvidJS.searchContent(instance, "search");
- * @example await InvidJS.searchContent(instance, "search", {type: ContentTypes.Playlist});
- * @returns {Promise<Array<Channel | Playlist | Video>>} Array of search results (channels, playlists, videos).
- */
-declare const searchContent: (instance: Instance, query: string, opts?: SearchOptions) => Promise<Array<Channel | Playlist | Video>>;
-/**
- * @name fetchTrending
- * @description Fetches trending videos.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {TrendingOptions} [opts] - Trending fetch options.
- * @example await InvidJS.fetchTrending(instance);
- * @example await InvidJS.fetchTrending(instance, {limit: 6});
- * @returns {Promise<Array<Video>>} Array of trending videos.
- */
-declare const fetchTrending: (instance: Instance, opts?: TrendingOptions) => Promise<Array<Video>>;
-/**
- * @name fetchPopular
- * @description Fetches popular videos.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {CommonOptions} [opts] - Popular fetch options.
- * @example await InvidJS.fetchPopular(instance);
- * @example await InvidJS.fetchPopular(instance, {limit: 10});
- * @returns {Promise<Array<Video>>} Array of popular videos.
- */
-declare const fetchPopular: (instance: Instance, opts?: CommonOptions) => Promise<Array<Video>>;
-/**
- * @name fetchHashtag
- * @description Fetches videos that have the specified hashtag.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {string} tag - Hashtag.
- * @param {HashtagOptions} [opts] - Hashtag fetch options.
- * @example await InvidJS.fetchHashtag(instance, mjd);
- * @example await InvidJS.fetchHashtag(instance, mjd, {limit: 10});
- * @returns {Promise<Array<Video>>} Array of videos.
- */
-declare const fetchHashtag: (instance: Instance, tag: string, opts?: HashtagOptions) => Promise<Array<Video>>;
-/**
- * @name saveBlob
- * @description Fetches a video as a Blob.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {Video} video - Video to fetch stream from.
- * @param {Format} source - Format to download.
- * @param {StreamOptions} [opts] - Save options.
- * @example await InvidJS.saveBlob(instance, video, format);
- * @example await InvidJS.saveBlob(instance, video, format, {parts: 5});
- * @returns {Promise<Blob>} A blob with the content.
- */
-declare const saveBlob: (instance: Instance, video: Video, source: Format, opts?: StreamOptions) => Promise<Blob>;
-/**
- * @name saveStream
- * @description Fetches a video as a Stream.
- * @param {Instance} instance - Instance to fetch data from.
- * @param {Video} video - Video to fetch stream from.
- * @param {Format} source - Format to download.
- * @example await InvidJS.saveStream(instance, video, format);
- * @returns {Promise<Stream>} Memory stream.
- */
-declare const saveStream: (instance: Instance, video: Video, source: Format) => Promise<Stream>;
+declare const _default: {
+    fetchInstances: (opts?: InstanceFetchOptions) => Promise<Instance[]>;
+    getInstance: (url: string) => Promise<Instance>;
+    fetchVideo: (instance: Instance, id: string, opts?: VideoFetchOptions) => Promise<Video>;
+    fetchComments: (instance: Instance, video: Video, opts?: CommentFetchOptions) => Promise<Comment[]>;
+    fetchPlaylist: (instance: Instance, id: string, opts?: PlaylistFetchOptions) => Promise<Playlist>;
+    fetchChannel: (instance: Instance, id: string, opts?: ContentOptions) => Promise<Channel>;
+    fetchSearchSuggestions: (instance: Instance, query: string) => Promise<Array<string>>;
+    searchContent: (instance: Instance, query: string, opts?: SearchOptions) => Promise<Array<Channel | Playlist | Video>>;
+    fetchTrending: (instance: Instance, opts?: TrendingOptions) => Promise<Array<Video>>;
+    fetchPopular: (instance: Instance, opts?: CommonOptions) => Promise<Array<Video>>;
+    fetchHashtag: (instance: Instance, tag: string, opts?: HashtagOptions) => Promise<Array<Video>>;
+    saveBlob: (instance: Instance, video: Video, source: Format, opts?: StreamOptions) => Promise<Blob>;
+    saveStream: (instance: Instance, video: Video, source: Format) => Promise<Stream>;
+    ErrorCodes: typeof ErrorCodes;
+    FetchTypes: typeof FetchTypes;
+    InstanceTypes: typeof InstanceTypes;
+    ContentTypes: typeof ContentTypes;
+    TrendingTypes: typeof TrendingTypes;
+    VideoSorting: typeof VideoSorting;
+    CommentSorting: typeof CommentSorting;
+    InstanceSorting: typeof InstanceSorting;
+    Duration: typeof Duration;
+    DateValues: typeof DateValues;
+    ChannelPlaylistsSorting: typeof ChannelPlaylistsSorting;
+    ChannelVideosSorting: typeof ChannelVideosSorting;
+    AudioQuality: typeof AudioQuality;
+    ImageQuality: typeof ImageQuality;
+};
 
-export { AudioQuality, ChannelPlaylistsSorting, ChannelVideosSorting, CommentSorting, ContentTypes, DateValues, Duration, ErrorCodes, FetchTypes, ImageQuality, InstanceSorting, InstanceTypes, TrendingTypes, VideoSorting, fetchChannel, fetchComments, fetchHashtag, fetchInstances, fetchPlaylist, fetchPopular, fetchSearchSuggestions, fetchTrending, fetchVideo, getInstance, saveBlob, saveStream, searchContent };
+export { _default as default };
