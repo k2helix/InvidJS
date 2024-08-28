@@ -1448,7 +1448,7 @@ var saveStream = async (instance, video, source) => {
   return new Promise((resolve, reject) => {
     const stream = import_got3.default.stream(queryURL, {
       searchParams,
-      headers: { Connection: "keep-alive", "User-Agent": useragent3 },
+      headers: { "User-Agent": useragent3 },
       agent: {
         https: new import_https.default.Agent({ keepAlive: true })
       },
