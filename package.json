@@ -1,0 +1,59 @@
+{
+  "name": "@invidjs/invid-js",
+  "type": "commonjs",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "tsup": {
+    "target": "node16"
+  },
+  "engines": {
+    "node": ">=16.9.0"
+  },
+  "version": "2.1.0",
+  "description": "An attempt to add Invidious support to Node.js",
+  "scripts": {
+    "prettier": "npx prettier index.ts ./api/* ./tests/* ./utils/* --write",
+    "test": "tsm node_modules/uvu/bin.js tests",
+    "build": "tsup index.ts --format cjs,esm --dts --clean && cp package.json dist && cp README.md dist",
+    "docs:build": "npx typedoc --plugin typedoc-plugin-missing-exports --plugin typedoc-plugin-coverage --plugin typedoc-plugin-extras --footerLastModified --customDescription 'InvidJS is an attempt to bring Invidious support to Node.js.' --name InvidJS --cleanOutputDir false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InvidJS/InvidJS.git"
+  },
+  "author": "alexavil",
+  "license": "AGPL-3.0-or-later",
+  "keywords": [
+    "invidious",
+    "invidious-api"
+  ],
+  "bugs": {
+    "url": "https://github.com/InvidJS/InvidJS/issues"
+  },
+  "homepage": "https://invidjs.js.org/",
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "loadr": "^0.1.1",
+    "prettier": "^3.3.3",
+    "tsm": "^2.3.0",
+    "tsup": "^8.2.4",
+    "typedoc": "^0.26.5",
+    "typedoc-plugin-coverage": "^3.3.0",
+    "typedoc-plugin-extras": "^3.1.0",
+    "typedoc-plugin-missing-exports": "^3.0.0",
+    "typescript": "^5.5.4",
+    "uvu": "^0.5.6"
+  },
+  "dependencies": {
+    "got": "^11.8.6",
+    "rereadable-stream": "^1.4.14"
+  }
+}
