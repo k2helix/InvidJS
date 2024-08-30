@@ -1355,7 +1355,7 @@ var saveBlob = async (instance, video, source, opts = {
   const params = new QueryParams();
   params.id = video.id;
   params.itag = source.tag;
-  params.local = true;
+  params.local = "true";
   const searchParams = params.createQuery();
   let length = 0;
   await import_got3.default.get(queryURL, {
@@ -1426,7 +1426,7 @@ var saveStream = async (instance, video, source) => {
   const params = new QueryParams();
   params.id = video.id;
   params.itag = source.tag;
-  params.local = true;
+  params.local = "true";
   const searchParams = params.createQuery();
   let length = 0;
   await import_got3.default.get(queryURL, {
