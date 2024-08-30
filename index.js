@@ -51,6 +51,7 @@ var QueryParams = class {
   features;
   id;
   itag;
+  local;
   createQuery() {
     let query = Object.fromEntries(
       Object.entries(this).filter(([key, value]) => value !== void 0)
@@ -1354,6 +1355,7 @@ var saveBlob = async (instance, video, source, opts = {
   const params = new QueryParams();
   params.id = video.id;
   params.itag = source.tag;
+  params.local = true;
   const searchParams = params.createQuery();
   let length = 0;
   await import_got3.default.get(queryURL, {
