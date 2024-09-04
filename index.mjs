@@ -1298,7 +1298,7 @@ var fetchHashtag = async (instance, tag, opts = {
 };
 var saveBlob = async (instance, video, source, opts = {
   parts: 5
-}) => {
+}, local = false) => {
   if (!instance)
     throw new MissingArgumentError(
       "You must provide an instance to fetch data from!"
@@ -1319,7 +1319,7 @@ var saveBlob = async (instance, video, source, opts = {
   const params = new QueryParams();
   params.id = video.id;
   params.itag = source.tag;
-  params.local = "true";
+  params.local = local.toString();
   const searchParams = params.createQuery();
   let length = 0;
   await got3.get(queryURL, {
@@ -1375,7 +1375,7 @@ var saveBlob = async (instance, video, source, opts = {
     resolve(blob);
   });
 };
-var saveStream = async (instance, video, source) => {
+var saveStream = async (instance, video, source, local = false) => {
   if (!instance)
     throw new MissingArgumentError(
       "You must provide an instance to fetch data from!"
@@ -1390,7 +1390,7 @@ var saveStream = async (instance, video, source) => {
   const params = new QueryParams();
   params.id = video.id;
   params.itag = source.tag;
-  params.local = "true";
+  params.local = local.toString();
   const searchParams = params.createQuery();
   let length = 0;
   await got3.get(queryURL, {

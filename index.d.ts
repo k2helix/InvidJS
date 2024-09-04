@@ -547,8 +547,8 @@ declare const _default: {
     fetchTrending: (instance: Instance, opts?: TrendingOptions) => Promise<Array<Video>>;
     fetchPopular: (instance: Instance, opts?: CommonOptions) => Promise<Array<Video>>;
     fetchHashtag: (instance: Instance, tag: string, opts?: HashtagOptions) => Promise<Array<Video>>;
-    saveBlob: (instance: Instance, video: Video, source: Format, opts?: StreamOptions) => Promise<Blob>;
-    saveStream: (instance: Instance, video: Video, source: Format) => Promise<Stream>;
+    saveBlob: (instance: Instance, video: Video, source: Format, opts?: StreamOptions, local?: boolean) => Promise<Blob>;
+    saveStream: (instance: Instance, video: Video, source: Format, local?: boolean) => Promise<Stream>;
     ErrorCodes: typeof ErrorCodes;
     FetchTypes: typeof FetchTypes;
     InstanceTypes: typeof InstanceTypes;
